@@ -1,0 +1,25 @@
+server:
+  port: 8888
+
+Spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  application:
+    name: study
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:mysql://101.35.44.70:3306/springboot-study
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# ===== 自定义swagger配置 ===== #
+swagger:
+  enable: true
+  application-name: ${spring.application.name}
+  application-version: 1.0
+  application-description: springfox swagger 3.0整合Demo
+  try-host: http://localhost:${server.port}
